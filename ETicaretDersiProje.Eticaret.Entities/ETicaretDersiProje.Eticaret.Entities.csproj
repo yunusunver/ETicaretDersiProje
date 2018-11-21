@@ -40,7 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Color.cs" />
+    <Compile Include="Concrete\Customer.cs" />
+    <Compile Include="Concrete\Order.cs" />
+    <Compile Include="Concrete\OrderDetail.cs" />
+    <Compile Include="Concrete\Payment.cs" />
+    <Compile Include="Concrete\Product.cs" />
+    <Compile Include="Concrete\Role.cs" />
+    <Compile Include="Concrete\Shipper.cs" />
+    <Compile Include="Concrete\Size.cs" />
+    <Compile Include="Concrete\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ComplexTypes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ETicaretDersiProje.Core\ETicaretDersiProje.Core.csproj">
+      <Project>{65E94E99-8860-4032-9C48-5A3F6471E8EB}</Project>
+      <Name>ETicaretDersiProje.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

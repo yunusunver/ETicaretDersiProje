@@ -40,7 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ISizeDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ETicaretDersiProje.Core\ETicaretDersiProje.Core.csproj">
+      <Project>{65E94E99-8860-4032-9C48-5A3F6471E8EB}</Project>
+      <Name>ETicaretDersiProje.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETicaretDersiProje.Eticaret.Entities\ETicaretDersiProje.Eticaret.Entities.csproj">
+      <Project>{8ECB31BA-0428-43C1-BC0A-AC94EF84630E}</Project>
+      <Name>ETicaretDersiProje.Eticaret.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
