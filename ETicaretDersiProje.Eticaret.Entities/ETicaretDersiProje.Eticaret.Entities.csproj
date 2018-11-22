@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexTypes\ProductDetail.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Color.cs" />
     <Compile Include="Concrete\Customer.cs" />
@@ -53,9 +54,7 @@
     <Compile Include="Concrete\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ComplexTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ETicaretDersiProje.Core\ETicaretDersiProje.Core.csproj">
       <Project>{65E94E99-8860-4032-9C48-5A3F6471E8EB}</Project>
