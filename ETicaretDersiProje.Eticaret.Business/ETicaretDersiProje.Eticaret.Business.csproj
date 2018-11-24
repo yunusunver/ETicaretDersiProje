@@ -75,6 +75,7 @@
     <Compile Include="Concrete\Managers\ShipperManager.cs" />
     <Compile Include="Concrete\Managers\SizeManager.cs" />
     <Compile Include="Concrete\Managers\SupplierManager.cs" />
+    <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\FluentValidation\CategoryValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\ColorValidatior.cs" />
