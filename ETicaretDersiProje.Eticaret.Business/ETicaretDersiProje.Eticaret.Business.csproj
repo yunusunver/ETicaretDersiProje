@@ -40,7 +40,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IColorService.cs" />
+    <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IOrderDetailService.cs" />
+    <Compile Include="Abstract\IOrderService.cs" />
+    <Compile Include="Abstract\IPaymentService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IRoleService.cs" />
+    <Compile Include="Abstract\IShipperService.cs" />
+    <Compile Include="Abstract\ISizeService.cs" />
+    <Compile Include="Abstract\ISupplierService.cs" />
+    <Compile Include="Concrete\Managers\CategoryManager.cs" />
+    <Compile Include="Concrete\Managers\ColorManager.cs" />
+    <Compile Include="Concrete\Managers\CustomerManager.cs" />
+    <Compile Include="Concrete\Managers\OrderDetailManager.cs" />
+    <Compile Include="Concrete\Managers\OrderManager.cs" />
+    <Compile Include="Concrete\Managers\PaymentManager.cs" />
+    <Compile Include="Concrete\Managers\ProductManager.cs" />
+    <Compile Include="Concrete\Managers\RoleManager.cs" />
+    <Compile Include="Concrete\Managers\ShipperManager.cs" />
+    <Compile Include="Concrete\Managers\SizeManager.cs" />
+    <Compile Include="Concrete\Managers\SupplierManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ETicaretDersiProje.Core\ETicaretDersiProje.Core.csproj">
+      <Project>{65E94E99-8860-4032-9C48-5A3F6471E8EB}</Project>
+      <Name>ETicaretDersiProje.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETicaretDersiProje.Eticaret.DataAccess\ETicaretDersiProje.Eticaret.DataAccess.csproj">
+      <Project>{CA714C99-47C4-401F-8A24-8FDED78F6FB2}</Project>
+      <Name>ETicaretDersiProje.Eticaret.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETicaretDersiProje.Eticaret.Entities\ETicaretDersiProje.Eticaret.Entities.csproj">
+      <Project>{8ECB31BA-0428-43C1-BC0A-AC94EF84630E}</Project>
+      <Name>ETicaretDersiProje.Eticaret.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
