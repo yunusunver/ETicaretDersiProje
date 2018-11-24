@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace ETicaretDersiProje.Eticaret.Business.CrossCuttingConcerns.Validation.FluentValidation
+namespace ETicaretDersiProje.Core.CrossCuttingConcerns.Validations.FluentValidation
 {
-    public class ValidatorTools
+    public class ValidatorTool
     {
         public static void FluentValidate(IValidator validator, object entity)
         {
             var result = validator.Validate(entity);
-            if (result.Errors.Count>0)
+            if (result.Errors.Count > 0)
             {
-                throw  new ValidationException(result.Errors);
+                throw new ValidationException(result.Errors);
             }
         }
     }
