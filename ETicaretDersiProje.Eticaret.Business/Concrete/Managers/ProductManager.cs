@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ETicaretDersiProje.Core.Aspects.Postsharp;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
+using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
 
@@ -28,11 +30,12 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             return _productDal.Get(x => x.ProductID == id);
         }
 
+        [FluentValidationAspect(typeof(ProductValidatior))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
-
+        [FluentValidationAspect(typeof(ProductValidatior))]
         public Product Update(Product product)
         {
             return _productDal.Update(product);
