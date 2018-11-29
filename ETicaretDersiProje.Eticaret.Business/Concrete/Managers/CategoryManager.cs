@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ETicaretDersiProje.Core.Aspects.Postsharp;
+using ETicaretDersiProje.Core.Aspects.Postsharp.CacheAspects;
+using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
+using ETicaretDersiProje.Core.CrossCuttingConcerns.Caching.Microsoft;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
@@ -19,7 +22,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
         {
             _categoryDal = categoryDal;
         }
-
+        [CacheAspect(typeof(MemoryCacheManager))]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
@@ -30,6 +33,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             return _categoryDal.Get(x=>x.CategoryID==id);
         }
         [FluentValidationAspect(typeof(CategoryValidatior))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Category Add(Category category)
         {
             return _categoryDal.Add(category);

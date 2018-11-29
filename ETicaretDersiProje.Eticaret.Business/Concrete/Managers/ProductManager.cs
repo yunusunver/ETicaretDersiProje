@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ETicaretDersiProje.Core.Aspects.Postsharp;
+using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
