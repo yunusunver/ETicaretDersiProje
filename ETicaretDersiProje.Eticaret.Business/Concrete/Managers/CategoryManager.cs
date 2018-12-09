@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ETicaretDersiProje.Core.Aspects.Postsharp;
 using ETicaretDersiProje.Core.Aspects.Postsharp.CacheAspects;
+using ETicaretDersiProje.Core.Aspects.Postsharp.LogAspects;
 using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Core.CrossCuttingConcerns.Caching.Microsoft;
+using ETicaretDersiProje.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
@@ -23,6 +25,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             _categoryDal = categoryDal;
         }
         [CacheAspect(typeof(MemoryCacheManager))]
+        [LogAspect(typeof(DatabaseLogger))]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
