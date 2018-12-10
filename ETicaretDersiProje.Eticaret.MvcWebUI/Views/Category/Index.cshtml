@@ -1,0 +1,20 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.CategoryListViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+      @foreach (var category in Model.Categories)
+      {
+          @category.CategoryName
+          <br/>
+      }
+</div>
+</body>
+</html>

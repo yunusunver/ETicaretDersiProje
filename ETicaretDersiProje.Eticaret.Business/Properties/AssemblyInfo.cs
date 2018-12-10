@@ -1,6 +1,10 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using ETicaretDersiProje.Core.Aspects.Postsharp.ExceptionAspects;
+using ETicaretDersiProje.Core.Aspects.Postsharp.LogAspects;
+using ETicaretDersiProje.Core.Aspects.Postsharp.PerformanceAspects;
+using ETicaretDersiProje.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -13,6 +17,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: LogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
+[assembly: LogAspect(typeof(FileLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
+[assembly: ExceptionLogAspect(typeof(FileLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
+[assembly: ExceptionLogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
+[assembly: PerformanceCounterAspect(AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

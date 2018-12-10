@@ -54,7 +54,7 @@ namespace ETicaretDersiProje.Core.Aspects.Postsharp.LogAspects
                 {
                     FullName = args.Method.DeclaringType==null?null:args.Method.DeclaringType.Name,
                     MethodName = args.Method.Name,
-                    LogParameters = logParameters
+                    Parameters = logParameters
                 };
 
                 _loggerService.Info(logDetail);

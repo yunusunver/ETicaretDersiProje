@@ -19,6 +19,7 @@ namespace ETicaretDersiProje.Core.CrossCuttingConcerns.Logging.Log4Net
 
         public string UserName => _loggingEvent.UserName;
 
+
         public object MessageObjects => _loggingEvent.MessageObject;
     }
 }

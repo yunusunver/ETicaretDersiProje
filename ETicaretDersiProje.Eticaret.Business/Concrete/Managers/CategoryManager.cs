@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ETicaretDersiProje.Core.Aspects.Postsharp;
 using ETicaretDersiProje.Core.Aspects.Postsharp.CacheAspects;
 using ETicaretDersiProje.Core.Aspects.Postsharp.LogAspects;
+using ETicaretDersiProje.Core.Aspects.Postsharp.PerformanceAspects;
 using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Core.CrossCuttingConcerns.Caching.Microsoft;
 using ETicaretDersiProje.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
@@ -25,9 +27,10 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             _categoryDal = categoryDal;
         }
         [CacheAspect(typeof(MemoryCacheManager))]
-        [LogAspect(typeof(DatabaseLogger))]
+        [PerformanceCounterAspect(2)]
         public List<Category> GetAll()
         {
+            
             return _categoryDal.GetList();
         }
 

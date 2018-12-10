@@ -10,6 +10,6 @@ namespace ETicaretDersiProje.Core.CrossCuttingConcerns.Logging
     {
         public string FullName { get; set; }
         public string MethodName { get; set; }
-        public List<LogParameter> LogParameters { get; set; }
+        public List<LogParameter> Parameters { get; set; }
     }
 }
