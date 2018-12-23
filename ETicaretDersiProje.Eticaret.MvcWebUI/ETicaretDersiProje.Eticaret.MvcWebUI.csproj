@@ -103,7 +103,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin\fonts\themify.svg" />
+    <Content Include="Content\Admin\js\bootstrap-checkbox-radio.js" />
+    <Content Include="Content\Admin\js\bootstrap-notify.js" />
+    <Content Include="Content\Admin\js\bootstrap.min.js" />
+    <Content Include="Content\Admin\js\chartist.min.js" />
+    <Content Include="Content\Admin\js\demo.js" />
+    <Content Include="Content\Admin\js\jquery.min.js" />
+    <Content Include="Content\Admin\js\paper-dashboard.js" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Admin\css\animate.min.css" />
+    <Content Include="Content\Admin\css\bootstrap.min.css" />
+    <Content Include="Content\Admin\css\demo.css" />
+    <Content Include="Content\Admin\css\paper-dashboard.css" />
+    <Content Include="Content\Admin\css\themify-icons.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,8 +133,14 @@
     <Content Include="log4net.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\Admin\fonts\themify.eot" />
+    <Content Include="Content\Admin\fonts\themify.ttf" />
+    <Content Include="Content\Admin\fonts\themify.woff" />
     <None Include="packages.config" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\_LayoutPageAdmin.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,6 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Uploads\Category\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ETicaretDersiProje.Core\ETicaretDersiProje.Core.csproj">

@@ -1,20 +1,38 @@
 ﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.CategoryListViewModel
 @{
-    Layout = null;
+    Layout = "../_LayoutPageAdmin.cshtml";
 }
-<!DOCTYPE html>
+<h2>Kategori</h2>
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      @foreach (var category in Model.Categories)
-      {
-          @category.CategoryName
-          <br/>
-      }
-</div>
-</body>
-</html>
+<p>
+    @Html.ActionLink("Kategori Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori İsmi</th>
+            <th>Açıklama</th>
+            <th>Resim</th>
+            <th>Aktif mi?</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Categories)
+        {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.Description</td>
+            <td><img src="@item.Picture" width="50" height="50" /></td>
+            <td>@item.Active</td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.CategoryID }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.CategoryID })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
