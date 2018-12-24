@@ -12,6 +12,7 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
     {
         public EticaretContext()
         {
+            this.Configuration.LazyLoadingEnabled = false;
             Database.SetInitializer<EticaretContext>(null);
         }
         public DbSet<Category> Categories { get; set; }

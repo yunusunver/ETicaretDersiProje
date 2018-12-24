@@ -1,0 +1,49 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.ProductListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Ürünler</h2>
+
+<p>
+    @Html.ActionLink("Kategori Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Ürün</th>
+        <th>İndirim</th>
+        <th>Açıklama</th>
+        <th>Kategori</th>
+        <th>Renk</th>
+        <th>Boyut</th>
+        <th>Fiyat</th>
+        <th>Resim</th>
+        <th>İşlemler</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Products)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.ProductName</td>
+            <td>@item.Discount</td>
+            <td>@item.ProductDescription</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.Color.ColorValue</td>
+            <td>@item.Size.SizeValue</td>
+            <td>@item.UnitPrice</td>
+            <td><img src="@item.Picture" width="50" height="50" /></td>
+            
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Detay", "Detail", new { id = item.ProductID }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

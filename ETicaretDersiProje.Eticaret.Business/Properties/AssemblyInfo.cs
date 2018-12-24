@@ -18,8 +18,6 @@ using ETicaretDersiProje.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: LogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
-[assembly: LogAspect(typeof(FileLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
-[assembly: ExceptionLogAspect(typeof(FileLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
 [assembly: ExceptionLogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
 [assembly: PerformanceCounterAspect(AttributeTargetTypes = "ETicaretDersiProje.Eticaret.Business.Concrete.Managers.*")]
 

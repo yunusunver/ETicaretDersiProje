@@ -91,8 +91,9 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
                 img.Save("~/Uploads/Category/" + newFoto);
                 category.Picture = "/Uploads/Category/" + newFoto;
                 category.Active = true;
-                _categoryService.Update(category);
+                
             }
+            _categoryService.Update(category);
             return RedirectToAction("Index");
         }
 

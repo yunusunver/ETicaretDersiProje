@@ -11,5 +11,12 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
     {
         public int ColorID { get; set; }
         public string ColorValue { get; set; }
+
+        public virtual List<Product> Product { get; set; }
+
+        public Color()
+        {
+            Product=new List<Product>();
+        }
     }
 }

@@ -12,6 +12,12 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
     public class SupplierManager:ISupplierService
     {
         private ISupplierDal _supplierDal;
+
+        public SupplierManager(ISupplierDal supplierDal)
+        {
+            _supplierDal = supplierDal;
+        }
+
         public List<Supplier> GetAll()
         {
             return _supplierDal.GetList();

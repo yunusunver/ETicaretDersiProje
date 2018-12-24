@@ -1,0 +1,88 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.ProductListViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Picture)
+        </dt>
+
+        <dd>
+            <img src="@Model.Product.Picture"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.DiscountAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.DiscountAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.CurrentOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.CurrentOrder)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Color.ColorValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Color.ColorValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Size.SizeValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Size.SizeValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Supplier.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Supplier.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Category.CategoryName)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id=Model.Product.ProductID}) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>
