@@ -1,0 +1,36 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.ColorListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Renkler</h2>
+
+<p>
+    @Html.ActionLink("Renk Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Renk</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Colors)
+        {
+            <tr>
+                <td>@item.ColorID</td>
+                <td>@item.ColorValue</td>
+              
+         
+
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.ColorID })|
+                    @Html.ActionLink("Sil", "Delete", new { id = item.ColorID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
