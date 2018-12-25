@@ -9,7 +9,14 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
 {
     public class Role:IEntity
     {
-        public int RoleID { get; set; }
+        public int Id { get; set; }
         public string RoleName { get; set; }
+
+        public virtual List<Customer> Customer { get; set; }
+
+        public Role()
+        {
+            Customer=new List<Customer>();
+        }
     }
 }

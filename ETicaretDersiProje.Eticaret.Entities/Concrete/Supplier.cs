@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,11 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public string DiscountType { get; set; }
         public int DiscountRate { get; set; }
         public bool DiscountAvailable { get; set; }
+        [ForeignKey("Customer")]
         public int CustomerID { get; set; }
         public string Logo { get; set; }
         public string Note { get; set; }
+
+        public virtual Customer Customer { get; set; }
     }
 }

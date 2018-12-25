@@ -1,0 +1,36 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.SizeListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Renkler</h2>
+
+<p>
+    @Html.ActionLink("Boyut Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Boyut</th>
+        <th>İşlemler</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Sizes)
+    {
+        <tr>
+            <td>@item.SizeID</td>
+            <td>@item.SizeValue</td>
+              
+         
+
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.SizeID })|
+                @Html.ActionLink("Sil", "Delete", new { id = item.SizeID })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

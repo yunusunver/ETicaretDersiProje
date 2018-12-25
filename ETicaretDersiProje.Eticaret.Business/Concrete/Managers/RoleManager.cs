@@ -25,7 +25,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
 
         public Role GetbyId(int id)
         {
-            return _roleDal.Get(x => x.RoleID == id);
+            return _roleDal.Get(x => x.Id == id);
         }
 
         public Role Add(Role role)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,11 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
         public DateTime RegistrationDate { get; set; }
-        public int RoleID { get; set; }
+        [ForeignKey("Role")]
+        public int RoleId { get; set; }
+
+        public virtual List<Supplier> Supplier { get; set; }
+        public virtual Role Role { get; set; }
+        
     }
 }

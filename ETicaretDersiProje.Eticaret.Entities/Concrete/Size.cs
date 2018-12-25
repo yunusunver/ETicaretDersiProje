@@ -13,10 +13,12 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public string SizeValue { get; set; }
 
         public virtual List<Product> Product { get; set; }
+        public virtual List<OrderDetail> OrderDetail { get; set; }
 
         public Size()
         {
             Product=new List<Product>();
+            OrderDetail=new List<OrderDetail>();
         }
     }
 }

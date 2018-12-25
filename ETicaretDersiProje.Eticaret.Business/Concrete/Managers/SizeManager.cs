@@ -12,10 +12,14 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
     public class SizeManager:ISizeService
     {
         private ISizeDal _sizeDal;
+        private IProductDal _productDal;
+        private IOrderDetailDal _orderDetailDal;
 
-        public SizeManager(ISizeDal sizeDal)
+        public SizeManager(ISizeDal sizeDal,IProductDal productDal,IOrderDetailDal orderDetailDal)
         {
             _sizeDal = sizeDal;
+            _productDal = productDal;
+            _orderDetailDal = orderDetailDal;
         }
 
         public List<Size> GetAll()
@@ -40,6 +44,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
 
         public void Delete(Size size)
         {
+          
             _sizeDal.Delete(size);
         }
     }
