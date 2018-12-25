@@ -132,6 +132,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SizeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,6 +140,7 @@
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Models\ColorListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
+    <Compile Include="Models\RoleListViewModel.cs" />
     <Compile Include="Models\SizeListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,6 +168,9 @@
     <Content Include="Views\Size\Index.cshtml" />
     <Content Include="Views\Size\Edit.cshtml" />
     <Content Include="Views\Size\Create.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

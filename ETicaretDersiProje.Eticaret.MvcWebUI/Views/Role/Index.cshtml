@@ -1,0 +1,34 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.RoleListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Renkler</h2>
+
+<p>
+    @Html.ActionLink("Role Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Role</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Roles)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.RoleName</td>
+
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id })|
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
