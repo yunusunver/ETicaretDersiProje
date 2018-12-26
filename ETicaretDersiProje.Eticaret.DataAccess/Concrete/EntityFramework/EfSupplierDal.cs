@@ -11,5 +11,13 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
 {
     public class EfSupplierDal:EfEntityRepositoryBase<Supplier,EticaretContext>,ISupplierDal
     {
+
+        public List<Supplier> GetAllSupplier()
+        {
+            using (var context = new EticaretContext())
+            {
+                return context.Suppliers.Include("Customer").ToList();
+            }
+        }
     }
 }

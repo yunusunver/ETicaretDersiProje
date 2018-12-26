@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SizeController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +143,7 @@
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\RoleListViewModel.cs" />
     <Compile Include="Models\SizeListViewModel.cs" />
+    <Compile Include="Models\SupplierListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +173,10 @@
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\Supplier\Create.cshtml" />
+    <Content Include="Views\Supplier\Edit.cshtml" />
+    <Content Include="Views\Supplier\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,6 +188,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Category\" />
     <Folder Include="Uploads\Product\" />
+    <Folder Include="Uploads\Supplier\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ETicaretDersiProje.Core\ETicaretDersiProje.Core.csproj">

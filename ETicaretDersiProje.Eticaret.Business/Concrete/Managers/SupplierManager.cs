@@ -20,7 +20,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
 
         public List<Supplier> GetAll()
         {
-            return _supplierDal.GetList();
+            return _supplierDal.GetAllSupplier();
         }
 
         public Supplier GetbyId(int id)

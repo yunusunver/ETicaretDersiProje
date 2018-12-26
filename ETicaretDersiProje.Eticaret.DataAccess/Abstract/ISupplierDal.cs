@@ -10,5 +10,6 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Abstract
 {
     public interface ISupplierDal:IEntityRepository<Supplier>
     {
+        List<Supplier> GetAllSupplier();
     }
 }

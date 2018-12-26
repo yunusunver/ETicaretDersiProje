@@ -1,0 +1,154 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.SupplierListViewModel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.ContactFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.ContactFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.ContactLName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.ContactLName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.DiscountType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.DiscountType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.DiscountAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.DiscountAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Logo)
+        </dt>
+
+        <dd>
+            <img src="@Model.Supplier.Logo" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Customer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Customer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Note)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
