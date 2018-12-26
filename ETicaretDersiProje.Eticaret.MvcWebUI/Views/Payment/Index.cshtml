@@ -1,0 +1,38 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.PaymentListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Renkler</h2>
+
+<p>
+    @Html.ActionLink("Ödeme Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ödeme Tipi</th>
+            <th>İzin ver?</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Payments)
+    {
+        <tr>
+            <td>@item.PaymentID</td>
+            <td>@item.PaymentType</td>
+            <td>@item.Allowed</td>
+              
+         
+
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.PaymentID })|
+                @Html.ActionLink("Sil", "Delete", new { id = item.PaymentID })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
