@@ -1,0 +1,38 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.ShipperListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Kargo Şirketleri</h2>
+
+<p>
+    @Html.ActionLink("Kargo Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Şirket ismi</th>
+        <th>Telefon</th>
+        <th>İşlemler</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Shippers)
+    {
+        <tr>
+            <td>@item.ShipperID</td>
+            <td>@item.CompanyName</td>
+            <td>@item.Phone</td>
+              
+         
+
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.ShipperID })|
+                @Html.ActionLink("Sil", "Delete", new { id = item.ShipperID })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
