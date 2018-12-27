@@ -1,0 +1,195 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.CustomerListViewModel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/_LayoutPageAdmin.cshtml";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CreditCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CreditCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CreditCardTypeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CreditCardTypeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.BillingAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.BillingAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.BillingCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.BillingCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.BillingCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.BillingCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.BillingPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.BillingPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ShipAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ShipAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ShipCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ShipCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ShipPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ShipPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ShipCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ShipCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.RegistrationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.RegistrationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role.RoleName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

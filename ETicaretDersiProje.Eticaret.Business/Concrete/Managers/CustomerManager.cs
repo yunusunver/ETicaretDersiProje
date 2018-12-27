@@ -20,7 +20,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
 
         public List<Customer> GetAll()
         {
-            return _customerDal.GetList();
+            return _customerDal.GetAllCustomer();
         }
 
         public Customer GetbyId(int id)

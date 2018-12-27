@@ -10,5 +10,6 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Abstract
 {
     public interface ICustomerDal:IEntityRepository<Customer>
     {
+        List<Customer> GetAllCustomer();
     }
 }

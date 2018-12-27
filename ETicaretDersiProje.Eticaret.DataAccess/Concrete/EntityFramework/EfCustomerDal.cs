@@ -11,5 +11,12 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
 {
     public class EfCustomerDal:EfEntityRepositoryBase<Customer,EticaretContext>,ICustomerDal
     {
+        public List<Customer> GetAllCustomer()
+        {
+            using (var context=new EticaretContext())
+            {
+                return context.Customers.Include("Role").ToList();
+            }
+        }
     }
 }
