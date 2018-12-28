@@ -1,0 +1,92 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.OrderListViewModel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Customer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Customer.FirstName)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Payment.PaymentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Payment.PaymentType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Shipper.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Shipper.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.OrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.OrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.OrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ShipDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.ShipDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.FulFilled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.FulFilled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Deleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Deleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.PaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.PaymentDate)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -12,5 +12,7 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public int PaymentID { get; set; }
         public string PaymentType { get; set; }
         public bool Allowed { get; set; }
+
+        public virtual List<Order> Orders { get; set; }
     }
 }

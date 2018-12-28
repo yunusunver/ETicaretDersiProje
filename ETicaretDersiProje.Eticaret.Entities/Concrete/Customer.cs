@@ -38,6 +38,7 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public int RoleId { get; set; }
 
         public virtual List<Supplier> Supplier { get; set; }
+        public virtual List<Order> Orders { get; set; }
         public virtual Role Role { get; set; }
         
     }

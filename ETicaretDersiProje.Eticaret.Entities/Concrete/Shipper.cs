@@ -12,5 +12,7 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public int ShipperID { get; set; }
         public string CompanyName{ get; set; }
         public string Phone { get; set; }
+
+        public virtual List<Order> Orders { get; set; }
     }
 }

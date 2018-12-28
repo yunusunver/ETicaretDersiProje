@@ -11,6 +11,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Abstract
     {
         List<Order> GetAll();
         Order GetbyId(int id);
+        Order GetbyOrderId(int id);
         Order Add(Order order);
         Order Update(Order order);
         void Delete(Order order);

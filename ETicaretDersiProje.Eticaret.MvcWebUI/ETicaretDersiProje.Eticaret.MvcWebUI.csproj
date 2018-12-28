@@ -132,6 +132,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Models\ColorListViewModel.cs" />
     <Compile Include="Models\CustomerListViewModel.cs" />
+    <Compile Include="Models\OrderListViewModel.cs" />
     <Compile Include="Models\PaymentListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\RoleListViewModel.cs" />
@@ -193,6 +195,10 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Detail.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

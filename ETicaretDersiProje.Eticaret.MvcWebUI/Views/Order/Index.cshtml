@@ -1,0 +1,46 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.OrderListViewModel
+@{
+    Layout = "../_LayoutPageAdmin.cshtml";
+}
+
+<h2>Satıcılar</h2>
+
+<p>
+    @Html.ActionLink("Müşteri Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Müşteri</th>
+            <th>Ödeme</th>
+            <th>Sipariş Numarası</th>
+            <th>Sipariş Tarihi</th>
+            <th>Kargo</th>
+            <th>Kargo Teslim Tarihi</th>
+            <th>Taşım Ücreti</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>@item.OrderID</td>
+                <td>@item.Customer.FirstName</td>
+                <td>@item.Payment.PaymentType</td>
+                <td>@item.OrderNumber</td>
+                <td>@item.OrderDate</td>
+                <td>@item.Shipper.CompanyName</td>
+                <td>@item.ShipDate</td>
+                <td>@item.Freight</td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.OrderID }) |
+                    @Html.ActionLink("Detay", "Detail", new { id = item.OrderID }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.OrderID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

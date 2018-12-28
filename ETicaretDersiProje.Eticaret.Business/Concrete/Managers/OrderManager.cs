@@ -20,12 +20,16 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
 
         public List<Order> GetAll()
         {
-            return _orderDal.GetList();
+            return _orderDal.GetAllOrder();
         }
 
         public Order GetbyId(int id)
         {
             return _orderDal.Get(x => x.OrderID == id);
+        }
+        public Order GetbyOrderId(int id)
+        {
+            return _orderDal.GetByOrderId(x => x.OrderID == id);
         }
 
         public Order Add(Order order)
