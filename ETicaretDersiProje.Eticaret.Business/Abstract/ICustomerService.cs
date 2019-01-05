@@ -16,5 +16,6 @@ namespace ETicaretDersiProje.Eticaret.Business.Abstract
         Customer Add(Customer customer);
         Customer Update(Customer customer);
         void Delete(Customer customer);
+        Customer GetByIdUser(int id);
     }
 }

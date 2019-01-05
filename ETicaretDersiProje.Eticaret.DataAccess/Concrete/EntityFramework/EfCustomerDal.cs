@@ -18,5 +18,13 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
                 return context.Customers.Include("Role").ToList();
             }
         }
+
+        public Customer GetByIdUser(int id)
+        {
+            using (var context=new EticaretContext())
+            {
+                return context.Customers.Include("Role").SingleOrDefault(x=>x.CustomerID==id);
+            }
+        }
     }
 }

@@ -35,6 +35,11 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
         {
             return _customerDal.Get(x => x.CustomerID == id);
         }
+
+        public Customer GetByIdUser(int id)
+        {
+            return _customerDal.GetByIdUser(id);
+        }
         [FluentValidationAspect(typeof(CustomerValidatior))]
         public Customer Add(Customer customer)
         {

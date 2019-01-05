@@ -15,9 +15,11 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         private ICategoryService _categoryService;
         private IProductService _productService;
         private ICustomerService _customerService;
+        private IRoleService _roleService;
 
-        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService)
+        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService)
         {
+            _roleService = roleService;
             _categoryService = categoryService;
             _productService = productService;
             _customerService = customerService;
@@ -109,12 +111,22 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 
         public ActionResult Profile(int id)
         {
-            var kullanici = _customerService.GetbyId(id);
+            var kullanici = _customerService.GetByIdUser(id);
             CustomerListViewModel model=new CustomerListViewModel()
             {
-                Customer = kullanici
+                Customer = kullanici,
+                Roles = new SelectList(_roleService.GetAll(), "Id", "RoleName")
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Profile(Customer customer)
+        {
+            var kullanici = _customerService.GetByIdUser(customer.CustomerID);
+            
+            _customerService.Update(customer);
+            return RedirectToAction("Index");
         }
 
    
