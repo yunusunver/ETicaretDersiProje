@@ -5,9 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
+using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
 using ETicaretDersiProje.Eticaret.MvcWebUI.Models;
+using FluentValidation.Resources;
+using FluentValidation.Results;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 {
@@ -39,6 +43,9 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         [HttpPost]
         public ActionResult Create(Category category,HttpPostedFileBase image)
         {
+          
+
+
             if (image != null)
             {
                 WebImage img = new WebImage(image.InputStream);
@@ -49,7 +56,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
                 img.Save("~/Uploads/Category/" + newFoto);
                 category.Picture = "/Uploads/Category/" + newFoto;
             }
-
+         
             category.Active = true;
             _categoryService.Add(category);
 

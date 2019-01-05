@@ -111,6 +111,7 @@
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SerializableLogEvent.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogDetail.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogParameter.cs" />
+    <Compile Include="CrossCuttingConcerns\Validations\FluentValidation\NinjectValidationFactory.cs" />
     <Compile Include="CrossCuttingConcerns\Validations\FluentValidation\ValidatorTool.cs" />
     <Compile Include="DataAccess\EntityFramework\EfEntityRepositoryBase.cs" />
     <Compile Include="DataAccess\IEntityRepository.cs" />

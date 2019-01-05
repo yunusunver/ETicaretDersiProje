@@ -96,6 +96,7 @@
     <Compile Include="ValidationRules\FluentValidation\ColorValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\CustomerValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\ProductValidatior.cs" />
+    <Compile Include="ValidationRules\FluentValidation\RoleValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\ShipperValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\SizeValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\SupplierValidatior.cs" />

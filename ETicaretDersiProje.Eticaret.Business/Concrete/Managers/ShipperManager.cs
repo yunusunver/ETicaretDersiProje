@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
+using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
 
@@ -27,12 +29,12 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
         {
             return _shipperDal.Get(x => x.ShipperID == id);
         }
-
+        [FluentValidationAspect(typeof(ShipperValidatior))]
         public Shipper Add(Shipper shipper)
         {
             return _shipperDal.Add(shipper);
         }
-
+        [FluentValidationAspect(typeof(ShipperValidatior))]
         public Shipper Update(Shipper shipper)
         {
             return _shipperDal.Update(shipper);

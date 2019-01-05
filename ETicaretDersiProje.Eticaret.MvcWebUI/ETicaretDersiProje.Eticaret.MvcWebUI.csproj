@@ -51,6 +51,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.0.100\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.Mvc5.8.0.100\lib\net45\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.ValidatorAttribute, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.ValidatorAttribute.8.0.100\lib\net45\FluentValidation.ValidatorAttribute.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
@@ -58,6 +67,15 @@
     <Reference Include="PostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
       <HintPath>..\packages\PostSharp.4.2.17\lib\net35-client\PostSharp.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -111,12 +129,33 @@
     <Content Include="Content\Admin\js\demo.js" />
     <Content Include="Content\Admin\js\jquery.min.js" />
     <Content Include="Content\Admin\js\paper-dashboard.js" />
+    <Content Include="Content\Home\css\animate.css" />
+    <Content Include="Content\Home\css\bootstrap.min.css" />
+    <Content Include="Content\Home\css\font-awesome.min.css" />
+    <Content Include="Content\Home\css\main.css" />
+    <Content Include="Content\Home\css\prettyPhoto.css" />
+    <Content Include="Content\Home\css\price-range.css" />
+    <Content Include="Content\Home\css\responsive.css" />
+    <Content Include="Content\Home\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Home\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Home\js\bootstrap.min.js" />
+    <Content Include="Content\Home\js\contact.js" />
+    <Content Include="Content\Home\js\gmaps.js" />
+    <Content Include="Content\Home\js\html5shiv.js" />
+    <Content Include="Content\Home\js\jquery.js" />
+    <Content Include="Content\Home\js\jquery.prettyPhoto.js" />
+    <Content Include="Content\Home\js\jquery.scrollUp.min.js" />
+    <Content Include="Content\Home\js\main.js" />
+    <Content Include="Content\Home\js\price-range.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Admin\css\animate.min.css" />
     <Content Include="Content\Admin\css\bootstrap.min.css" />
     <Content Include="Content\Admin\css\demo.css" />
     <Content Include="Content\Admin\css\paper-dashboard.css" />
     <Content Include="Content\Admin\css\themify-icons.css" />
+    <Content Include="Content\Home\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Home\fonts\FontAwesome.otf" />
+    <Content Include="Content\Home\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -132,6 +171,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -145,6 +185,8 @@
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Models\ColorListViewModel.cs" />
     <Compile Include="Models\CustomerListViewModel.cs" />
+    <Compile Include="Models\HomeListViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\OrderListViewModel.cs" />
     <Compile Include="Models\PaymentListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
@@ -199,6 +241,11 @@
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
     <Content Include="Views\Order\Detail.cshtml" />
+    <Content Include="Views\_LayoutPageHome.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
