@@ -192,6 +192,7 @@
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\RoleListViewModel.cs" />
     <Compile Include="Models\ShipperListViewModel.cs" />
+    <Compile Include="Models\SignupViewModel.cs" />
     <Compile Include="Models\SizeListViewModel.cs" />
     <Compile Include="Models\SupplierListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,5 +14,6 @@ namespace ETicaretDersiProje.Eticaret.Business.Abstract
         Role Add(Role role);
         Role Update(Role role);
         void Delete(Role role);
+        Role GetbyRoleName(string roleName);
     }
 }

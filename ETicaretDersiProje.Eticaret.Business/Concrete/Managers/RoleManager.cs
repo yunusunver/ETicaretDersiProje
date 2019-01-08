@@ -23,6 +23,11 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             return _roleDal.GetList();
         }
 
+        public Role GetbyRoleName(string roleName)
+        {
+            return _roleDal.Get(x => x.RoleName == roleName);
+        }
+
         public Role GetbyId(int id)
         {
             return _roleDal.Get(x => x.Id == id);

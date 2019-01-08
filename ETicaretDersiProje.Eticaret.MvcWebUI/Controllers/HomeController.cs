@@ -68,6 +68,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         public ActionResult Login(Customer customer)
         {
             var kullanici = _customerService.Get(x=>x.Email==customer.Email && x.Password==customer.Password);
+            var role = _roleService.GetbyId(kullanici.RoleId);
             if (kullanici==null)
             {
                 return RedirectToAction("Index", "Home");
@@ -79,12 +80,26 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
                     Session["id"] = kullanici.CustomerID;
                     Session["email"] = kullanici.Email.ToString();
                     Session["password"] = kullanici.Password.ToString();
+                    Session["role"] = role.RoleName.ToString();
                    
                     return RedirectToAction("Index", "Home");
                 }
               
             }
             return View();
+        }
+        [HttpPost]
+        public ActionResult SignUp(Customer customer)
+        {
+            var role = _roleService.GetbyRoleName("Kullanıcı");
+            customer.RegistrationDate = DateTime.Now;
+            if (role!=null)
+            {
+                customer.RoleId = role.Id;
+            }
+            
+            _customerService.Add(customer);
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Logout()
@@ -123,8 +138,9 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         [HttpPost]
         public ActionResult Profile(Customer customer)
         {
+            var role = _roleService.GetbyRoleName("Kullanıcı");
             var kullanici = _customerService.GetByIdUser(customer.CustomerID);
-            
+            customer.RoleId = role.Id;
             _customerService.Update(customer);
             return RedirectToAction("Index");
         }
