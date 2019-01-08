@@ -12,17 +12,28 @@
                {
                    <div class="panel panel-default">
                        <div class="panel-heading">
-                           <h4 class="panel-title"><a href="/Home/Index/@item.CategoryID">@item.CategoryName</a></h4>
+                           <h4 class="panel-title"><a href="/Home/Index?id=@item.CategoryID">@item.CategoryName</a></h4>
                        </div>
                    </div>
                }
             </div><!--/category-products-->
 
-          
+            <div class="brands_products"><!--brands_products-->
+                <h2>Markalar</h2>
+                <div class="brands-name">
+                    <ul class="nav nav-pills nav-stacked">
+                        @foreach (var item in Model.Suppliers)
+                        {
+                            <li><a href="/Home/Index?supplierID=@item.SupplierID"> <span class="pull-right">(50)</span>@item.CompanyName</a></li>
+                        }
+
+                    </ul>
+                </div>
+            </div><!--/brands_products-->
 
             <div class="price-range">
                 <!--price-range-->
-                <h2>Price Range</h2>
+                <h2>Fiyat Aralığı</h2>
                 <div class="well text-center">
                     <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
                     <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
@@ -48,7 +59,7 @@
                                 <img src="@item.Picture" alt=""  style="width: 255px; height: 217px;"/>
                                 <h2>$@item.UnitPrice</h2>
                                 <p>@item.ProductName</p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
                             </div>
                             <div class="product-overlay">
                                 <div class="overlay-content">

@@ -12,6 +12,8 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Models
 
         public List<Category> Categories { get; set; }
 
+        public List<Supplier> Suppliers { get; set; }
+
         public Product Product { get; set; }
 
         public List<Product> CurrentCategoryProduct { get; set; }

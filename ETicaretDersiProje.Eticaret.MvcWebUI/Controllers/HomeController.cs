@@ -19,36 +19,57 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         private IProductService _productService;
         private ICustomerService _customerService;
         private IRoleService _roleService;
+        private ISupplierService _supplierService;
 
-        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService)
+        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService,ISupplierService supplierService)
         {
             _roleService = roleService;
             _categoryService = categoryService;
             _productService = productService;
             _customerService = customerService;
+            _supplierService = supplierService;
         }
 
-        public ActionResult Index(int id=0)
+        public ActionResult Index(int id=0 , int supplierID=0)
         {
-            if (id == 0)
+            if (id == 0 && supplierID==0)
             {
                 HomeListViewModel model = new HomeListViewModel()
                 {
                     Products = _productService.GetAll(),
-                    Categories = _categoryService.GetAll()
+                    Categories = _categoryService.GetAll(),
+                    Suppliers = _supplierService.GetAll()
                 };
                 return View(model);
             }
-            else
+            else if(id!=0)
             {
                 HomeListViewModel model = new HomeListViewModel()
                 {
                     Products = _productService.GetAll().Where(x=>x.CategoryID==id).ToList(),
-                    Categories = _categoryService.GetAll()
+                    Categories = _categoryService.GetAll(),
+                    Suppliers = _supplierService.GetAll()
+                };
+                return View(model);
+            }else if (supplierID!=0)
+            {
+                HomeListViewModel model = new HomeListViewModel()
+                {
+                    Products = _productService.GetAll().Where(x => x.SupplierID == supplierID).ToList(),
+                    Categories = _categoryService.GetAll(),
+                    Suppliers = _supplierService.GetAll()
                 };
                 return View(model);
             }
-          
+            return RedirectToAction("Error");
+
+        }
+
+     
+
+        public ActionResult Error()
+        {
+            return View();
         }
 
         public ActionResult List(int id=0)

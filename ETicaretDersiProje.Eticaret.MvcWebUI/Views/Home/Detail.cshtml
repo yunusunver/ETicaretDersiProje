@@ -39,7 +39,7 @@
                 <!--/product-information-->
                 <img src="images/product-details/new.jpg" class="newarrival" alt="" />
                 <h2>@Model.Product.ProductName</h2>
-                <p><b>Firma : </b>@Model.Product.Supplier.CompanyName</p>
+                <p><b>Firma : </b>@Model.Product.Supplier.CompanyName </p>
                 <img src="images/product-details/rating.png" alt="" />
                 <span>
                     <span>@Model.Product.UnitPrice TL</span>
@@ -64,7 +64,7 @@
         <div class="col-sm-12">
             <ul class="nav nav-tabs">
                 <li><a href="#details" data-toggle="tab">Ürün Detayları</a></li>
-                <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
+                <li><a href="#companyprofile" data-toggle="tab">Marka Profili</a></li>
                 <li><a href="#tag" data-toggle="tab">Tag</a></li>
                 <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
             </ul>
@@ -86,54 +86,22 @@
             </div>
 
             <div class="tab-pane fade" id="companyprofile">
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery1.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
+                <div class="media commnets">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="@Model.Product.Supplier.Logo" alt="" style="width:136px ;height:96px ">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">@Model.Product.Supplier.CompanyName</h4>
+                        <p> <b>Email:</b> @Model.Product.Supplier.Email</p><br />
+                        <p> <b>Telefon:</b> @Model.Product.Supplier.Phone</p><br/>
+                        <p> <b>İnternet Sayfası:</b>@Model.Product.Supplier.Website</p><br/>
+                        <p> <b>Şehir:</b>@Model.Product.Supplier.City</p><br />
+
+                      
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery3.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery2.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery4.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          
+           
             </div>
 
             <div class="tab-pane fade" id="tag">

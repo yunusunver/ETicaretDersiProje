@@ -138,6 +138,8 @@
     <Content Include="Content\Home\css\responsive.css" />
     <Content Include="Content\Home\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Home\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Home\images\404.png" />
+    <Content Include="Content\Home\images\logo.png" />
     <Content Include="Content\Home\js\bootstrap.min.js" />
     <Content Include="Content\Home\js\contact.js" />
     <Content Include="Content\Home\js\gmaps.js" />
@@ -248,6 +250,7 @@
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

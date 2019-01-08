@@ -24,8 +24,8 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public string Email { get; set; }
         public string Website { get; set; }
         public string DiscountType { get; set; }
-        public int DiscountRate { get; set; }
-        public bool DiscountAvailable { get; set; }
+        public int? DiscountRate { get; set; }
+        public bool? DiscountAvailable { get; set; }
         [ForeignKey("Customer")]
         public int CustomerID { get; set; }
         public string Logo { get; set; }
