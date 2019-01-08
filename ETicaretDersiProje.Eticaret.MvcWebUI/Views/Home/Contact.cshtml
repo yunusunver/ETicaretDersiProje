@@ -11,20 +11,16 @@
                     <h2 class="title text-center">BİZE ULAŞIN!</h2>
                     <div class="status alert alert-success" style="display: none"></div>
                     <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
-                        <div class="form-group col-md-6">
-                            <input type="text" name="name" class="form-control" required="required" placeholder="Ad">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="email" name="email" class="form-control" required="required" placeholder="Email">
-                        </div>
+                  
                         <div class="form-group col-md-12">
-                            <input type="text" name="subject" class="form-control" required="required" placeholder="Başlık">
+                            <input type="text" name="subject" id="baslik" class="form-control" required="required" placeholder="Başlık">
                         </div>
                         <div class="form-group col-md-12">
                             <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Mesajınızı buraya yazınız."></textarea>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Gönder">
+                           
+                            <a class="btn btn-primary pull-right" onclick="SendMail()">Mail Göndermek için tıkla</a>
                         </div>
                     </form>
                 </div>
@@ -63,3 +59,18 @@
     </div>
 </div><!--/#contact-page-->
 
+<script>
+    var SendMail = function () {
+        var baslik = $('#baslik').val();
+        var mesaj = $('#message').val();
+        $.ajax({
+            type: "POST",
+            url: "/Home/SendMailToUser",
+            data: {mesaj:mesaj,baslik:baslik},
+            success: function(data) {
+                alert("Gönderildi");
+            }
+
+        });
+    }
+</script>
