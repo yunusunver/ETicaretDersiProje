@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComplexTypes\ProductDetail.cs" />
+    <Compile Include="Concrete\Cart.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Color.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Order.cs" />
     <Compile Include="Concrete\OrderDetail.cs" />
+    <Compile Include="Concrete\Ordered.cs" />
     <Compile Include="Concrete\Payment.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\Role.cs" />

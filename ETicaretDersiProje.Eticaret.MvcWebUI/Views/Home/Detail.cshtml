@@ -17,8 +17,8 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <a href=""><img src="@Model.Product.Picture" alt=""></a>
-                        <a href=""><img src=""@Model.Product.Picture" alt=""></a>
-                        <a href=""><img src=""@Model.Product.Picture" alt=""></a>
+                        <a href=""><img src="@Model.Product.Picture" alt=""></a>
+                        <a href=""><img src="@Model.Product.Picture" alt=""></a>
                     </div>
                  
 
@@ -43,12 +43,12 @@
                 <img src="images/product-details/rating.png" alt="" />
                 <span>
                     <span>@Model.Product.UnitPrice TL</span>
-                    <label>Adet:</label>
-                    <input type="text" value="1" />
-                    <button type="button" class="btn btn-fefault cart">
-                        <i class="fa fa-shopping-cart"></i>
-                        Sepete Ekle
-                    </button>
+                    <a href="/Cart/AddCart/@Model.Product.ProductID">
+                        <button type="button" class="btn btn-fefault cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            Sepete Ekle
+                        </button>
+                    </a>
                 </span>
                 <p><b>Stok Durumu:</b> @Model.Product.QuantityPerUnit</p>
                 <p><b>Kategori:</b> @Model.Product.Category.CategoryName</p>

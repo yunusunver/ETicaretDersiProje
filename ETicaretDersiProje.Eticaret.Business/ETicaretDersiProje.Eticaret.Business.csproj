@@ -71,6 +71,7 @@
     <Compile Include="Abstract\IColorService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IOrderDetailService.cs" />
+    <Compile Include="Abstract\IOrderedService.cs" />
     <Compile Include="Abstract\IOrderService.cs" />
     <Compile Include="Abstract\IPaymentService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Concrete\Managers\ColorManager.cs" />
     <Compile Include="Concrete\Managers\CustomerManager.cs" />
     <Compile Include="Concrete\Managers\OrderDetailManager.cs" />
+    <Compile Include="Concrete\Managers\OrderedManager.cs" />
     <Compile Include="Concrete\Managers\OrderManager.cs" />
     <Compile Include="Concrete\Managers\PaymentManager.cs" />
     <Compile Include="Concrete\Managers\ProductManager.cs" />

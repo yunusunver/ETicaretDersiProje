@@ -10,6 +10,7 @@ using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Business.Concrete.Managers;
 using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
 using ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework;
+using ETicaretDersiProje.Eticaret.Entities.Concrete;
 using Ninject.Modules;
 
 namespace ETicaretDersiProje.Eticaret.Business.DependencyResolvers.Ninject
@@ -29,6 +30,7 @@ namespace ETicaretDersiProje.Eticaret.Business.DependencyResolvers.Ninject
             Bind<IShipperService>().To<ShipperManager>().InSingletonScope();
             Bind<IPaymentService>().To<PaymentManager>().InSingletonScope();
             Bind<ICustomerService>().To<CustomerManager>().InSingletonScope();
+            Bind<IOrderedService>().To<OrderedManager>().InSingletonScope();
 
             Bind<ICategoryDal>().To<EfCategoryDal>();
             Bind<IProductDal>().To<EfProductDal>();
@@ -41,6 +43,7 @@ namespace ETicaretDersiProje.Eticaret.Business.DependencyResolvers.Ninject
             Bind<IShipperDal>().To<EfShipperDal>();
             Bind<IPaymentDal>().To<EfPaymentDal>();
             Bind<ICustomerDal>().To<EfCustomerDal>();
+            Bind<IOrderedDal>().To<EfOrderedDal>();
 
             Bind<DbContext>().To<EticaretContext>();
             

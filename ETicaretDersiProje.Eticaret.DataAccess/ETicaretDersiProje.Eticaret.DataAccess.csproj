@@ -52,6 +52,7 @@
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IOrderDal.cs" />
     <Compile Include="Abstract\IOrderDetailDal.cs" />
+    <Compile Include="Abstract\IOrderedDal.cs" />
     <Compile Include="Abstract\IPaymentDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IRoleDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfOrderDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfOrderDetailDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfOrderedDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfPaymentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfRoleDal.cs" />

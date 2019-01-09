@@ -134,13 +134,16 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 
         public ActionResult Detail(int id)
         {
-            var product = _productService.GetbyProduct(id);
-            HomeListViewModel model=new HomeListViewModel()
-            {
-                Product = product,
-                CurrentCategoryProduct=_productService.GetAll().Where(x=>x.CategoryID==product.CategoryID).ToList()
-            };
-            return View(model);
+           
+                var product = _productService.GetbyProduct(id);
+                HomeListViewModel model = new HomeListViewModel()
+                {
+                    Product = product,
+                    CurrentCategoryProduct = _productService.GetAll().Where(x => x.CategoryID == product.CategoryID).ToList()
+                };
+                return View(model);
+          
+         
         }
 
         public ActionResult Contact()
