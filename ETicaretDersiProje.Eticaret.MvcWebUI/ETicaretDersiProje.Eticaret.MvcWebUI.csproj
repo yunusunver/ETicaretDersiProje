@@ -136,6 +136,7 @@
     <Content Include="Content\Home\css\prettyPhoto.css" />
     <Content Include="Content\Home\css\price-range.css" />
     <Content Include="Content\Home\css\responsive.css" />
+    <Content Include="Content\Home\css\success.css" />
     <Content Include="Content\Home\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Home\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Home\images\404.png" />
@@ -186,6 +187,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartListViewModel.cs" />
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Models\ColorListViewModel.cs" />
     <Compile Include="Models\CustomerListViewModel.cs" />
@@ -255,6 +257,7 @@
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\Checkout\SuccessPay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

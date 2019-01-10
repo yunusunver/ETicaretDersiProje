@@ -22,6 +22,7 @@ namespace ETicaretDersiProje.Eticaret.Business.DependencyResolvers.Ninject
             Bind<IValidator<Shipper>>().To<ShipperValidatior>().InSingletonScope();
             Bind<IValidator<Supplier>>().To<SupplierValidatior>().InSingletonScope();
             Bind<IValidator<Role>>().To<RoleValidatior>().InSingletonScope();
+            Bind<IValidator<Ordered>>().To<OrderedValidatior>().InSingletonScope();
         }
     }
 }

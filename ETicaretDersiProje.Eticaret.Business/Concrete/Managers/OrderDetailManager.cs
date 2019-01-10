@@ -23,6 +23,8 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             return _orderDetailDal.GetList();
         }
 
+      
+
         public OrderDetail GetbyId(int id)
         {
             return _orderDetailDal.Get(x=>x.OrderDetailID==id);
