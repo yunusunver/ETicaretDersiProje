@@ -1,0 +1,39 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.OrderedListViewModel
+@{
+    Layout = "../_LayoutPageHome.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Şirket İsmi</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Müşteri</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Ordereds)
+        {
+            <tr>
+                <td>@item.CustomerID</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.City</td>
+                <td>@item.Phone</td>
+              
+                <td>
+                 
+                    @Html.ActionLink("Sil", "Delete", new { id = item.CustomerID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

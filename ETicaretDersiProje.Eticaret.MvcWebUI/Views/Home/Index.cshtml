@@ -24,7 +24,7 @@
                     <ul class="nav nav-pills nav-stacked">
                         @foreach (var item in Model.Suppliers)
                         {
-                            <li><a href="/Home/Index?supplierID=@item.SupplierID"> <span class="pull-right">(50)</span>@item.CompanyName</a></li>
+                            <li><a href="/Home/Index?supplierID=@item.SupplierID"> <span class="pull-right">(@Model.Products.Where(x=>x.SupplierID==item.SupplierID).ToList().Count)</span>@item.CompanyName</a></li>
                         }
 
                     </ul>
@@ -39,7 +39,9 @@
                     <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
                 </div>
             </div><!--/price-range-->
-
+            <div class="shipping text-center"><!--shipping-->
+                <img src="/Content/Home/images/shipping.jpg" alt="" />
+            </div><!--/shipping-->
          
 
         </div>

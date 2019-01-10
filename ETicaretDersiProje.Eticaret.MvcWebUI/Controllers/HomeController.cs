@@ -23,14 +23,16 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         private ICustomerService _customerService;
         private IRoleService _roleService;
         private ISupplierService _supplierService;
+        private IOrderedService _orderedService;
 
-        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService,ISupplierService supplierService)
+        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService,ISupplierService supplierService, IOrderedService orderedService)
         {
             _roleService = roleService;
             _categoryService = categoryService;
             _productService = productService;
             _customerService = customerService;
             _supplierService = supplierService;
+            _orderedService = orderedService;
         }
 
         public ActionResult Index(int id=0 , int supplierID=0)
@@ -134,6 +136,15 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         {
             Session.Clear();
             return RedirectToAction("Index","Home");
+        }
+
+        public ActionResult Orders(int id)
+        {
+            OrderedListViewModel model=new OrderedListViewModel()
+            {
+                Ordereds = _orderedService.GetAll().Where(x=>x.CustomerID==id).OrderByDescending(x => x.OrderDate).ToList()
+            };
+            return View(model);
         }
 
         public ActionResult Detail(int id)

@@ -107,6 +107,7 @@
                                 @if (Session["email"] != null)
                                 {
                                     <li><a href="/Home/Profile/@Session["id"]"><i class="fa fa-user"></i> @Session["email"].ToString()</a></li>
+                                    <li><a href="/Home/Orders/@Session["id"]"><i class="glyphicon glyphicon-time"></i> Siparişlerim</a></li>
                                     <li><a href="/Checkout/Index"><i class="fa fa-crosshairs"></i> Sipariş Tamamla</a></li>
                                     <li><a href="/Cart/Index"><i class="fa fa-shopping-cart"></i> Sepet</a></li>
                                     <li><a href="/Home/Logout"><i class="fa fa-lock"></i> Çıkış</a></li>
@@ -116,8 +117,8 @@
                                     <li><a href="/Home/Login"><i class="fa fa-lock"></i> Giriş/Kayıt</a></li>
                                 }
 
-                              
-                               
+
+
 
                             </ul>
                         </div>

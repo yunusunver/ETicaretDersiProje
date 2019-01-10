@@ -141,6 +141,7 @@
     <Content Include="Content\Home\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Home\images\404.png" />
     <Content Include="Content\Home\images\logo.png" />
+    <Content Include="Content\Home\images\shipping.jpg" />
     <Content Include="Content\Home\js\bootstrap.min.js" />
     <Content Include="Content\Home\js\contact.js" />
     <Content Include="Content\Home\js\gmaps.js" />
@@ -196,6 +197,7 @@
     <Compile Include="Models\CustomerListViewModel.cs" />
     <Compile Include="Models\HomeListViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\OrderedListViewModel.cs" />
     <Compile Include="Models\OrderListViewModel.cs" />
     <Compile Include="Models\PaymentListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
@@ -266,6 +268,7 @@
     <Content Include="Views\Firma\Create.cshtml" />
     <Content Include="Views\Firma\Edit.cshtml" />
     <Content Include="Views\Firma\ListOrdered.cshtml" />
+    <Content Include="Views\Home\Orders.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
