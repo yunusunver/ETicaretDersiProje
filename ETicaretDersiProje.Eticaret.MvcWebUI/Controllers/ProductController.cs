@@ -7,10 +7,12 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
+using ETicaretDersiProje.Eticaret.MvcWebUI.Filters;
 using ETicaretDersiProje.Eticaret.MvcWebUI.Models;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 {
+    [AuthFilter]
     public class ProductController : Controller
     {
         private IProductService _productService;

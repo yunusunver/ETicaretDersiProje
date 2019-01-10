@@ -184,6 +184,7 @@
     <Compile Include="Controllers\ShipperController.cs" />
     <Compile Include="Controllers\SizeController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Filters\AuthFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

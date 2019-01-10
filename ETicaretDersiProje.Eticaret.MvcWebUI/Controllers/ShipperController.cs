@@ -5,10 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
+using ETicaretDersiProje.Eticaret.MvcWebUI.Filters;
 using ETicaretDersiProje.Eticaret.MvcWebUI.Models;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 {
+    [AuthFilter]
     public class ShipperController : Controller
     {
         private IShipperService _shipperService;

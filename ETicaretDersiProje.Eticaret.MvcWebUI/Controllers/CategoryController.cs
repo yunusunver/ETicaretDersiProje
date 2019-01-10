@@ -9,12 +9,14 @@ using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
+using ETicaretDersiProje.Eticaret.MvcWebUI.Filters;
 using ETicaretDersiProje.Eticaret.MvcWebUI.Models;
 using FluentValidation.Resources;
 using FluentValidation.Results;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 {
+    [AuthFilter]
     public class CategoryController : Controller
     {
         private ICategoryService _categoryService;
