@@ -32,5 +32,6 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public string Note { get; set; }
 
         public virtual Customer Customer { get; set; }
+        public virtual List<OrderDetail> OrderDetail { get; set; }
     }
 }

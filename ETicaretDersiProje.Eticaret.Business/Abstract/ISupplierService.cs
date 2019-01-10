@@ -14,5 +14,6 @@ namespace ETicaretDersiProje.Eticaret.Business.Abstract
         Supplier Add(Supplier supplier);
         Supplier Update(Supplier supplier);
         void Delete(Supplier supplier);
+        Supplier GetSupplierbyCustomer(int id);
     }
 }

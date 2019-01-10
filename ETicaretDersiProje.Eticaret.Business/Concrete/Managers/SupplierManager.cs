@@ -25,6 +25,11 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
             return _supplierDal.GetAllSupplier();
         }
 
+        public Supplier GetSupplierbyCustomer(int id)
+        {
+            return _supplierDal.Get(x => x.CustomerID==id);
+        }
+
         public Supplier GetbyId(int id)
         {
             return _supplierDal.Get(x => x.SupplierID == id);

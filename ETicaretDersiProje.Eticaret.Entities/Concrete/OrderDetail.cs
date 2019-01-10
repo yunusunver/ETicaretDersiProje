@@ -11,6 +11,8 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
     public class OrderDetail:IEntity
     {
         public int OrderDetailID { get; set; }
+        [ForeignKey("Supplier")]
+        public int? SupplierID { get; set; }
       
         [ForeignKey("Product")]
         public int ProductID { get; set; }
@@ -26,8 +28,8 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public DateTime ShipDate { get; set; }
         public DateTime BillDate { get; set; }
 
-       
-      
+        public virtual Supplier Supplier { get; set; }
+
         public virtual Product Product { get; set; }
 
 

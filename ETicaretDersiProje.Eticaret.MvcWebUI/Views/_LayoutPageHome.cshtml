@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using ETicaretDersiProje.Eticaret.Entities.Concrete
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -82,6 +83,23 @@
                          
                             </div>
                         }
+                        @if (Session["role"] as string=="Firma")
+                        {
+                            <div class="btn-group pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                        Firma
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Firma/Index">Firma Paneli</a></li>
+                                       
+                                    </ul>
+                                </div>
+
+                         
+                            </div>
+                        }
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
@@ -124,24 +142,11 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="/Home/Index" class="active">Anasayfa</a></li>
-                                <li class="dropdown">
-                                    <a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="404.html">404</a></li>
+                                @foreach (var item in (List<Category>)Session["kategoriler"])
+                                {
+                                    <li><a href="/Home/Index?id=@item.CategoryID">@item.CategoryName</a></li>
+                                }
+
                                 <li><a href="/Home/Contact">İletişim</a></li>
                             </ul>
                         </div>

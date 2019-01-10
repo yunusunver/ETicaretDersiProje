@@ -20,7 +20,7 @@ namespace ETicaretDersiProje.Eticaret.Business.Concrete.Managers
 
         public List<OrderDetail> GetAll()
         {
-            return _orderDetailDal.GetList();
+            return _orderDetailDal.GetAllOrderDetail();
         }
 
       

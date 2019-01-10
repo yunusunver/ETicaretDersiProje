@@ -11,6 +11,7 @@ using ETicaretDersiProje.Core.Aspects.Postsharp.ValidationAspects;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Business.ValidationRules.FluentValidation;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
+using ETicaretDersiProje.Eticaret.MvcWebUI.Filters;
 using ETicaretDersiProje.Eticaret.MvcWebUI.Models;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
@@ -34,6 +35,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 
         public ActionResult Index(int id=0 , int supplierID=0)
         {
+            Session["kategoriler"] = _categoryService.GetAll();
             if (id == 0 && supplierID==0)
             {
                 HomeListViewModel model = new HomeListViewModel()
@@ -152,7 +154,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         {
             return View();
         }
-
+        [Auth]
         public ActionResult Profile(int id)
         {
             var kullanici = _customerService.GetByIdUser(id);
@@ -163,13 +165,13 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             };
             return View(model);
         }
-
+        [Auth]
         [HttpPost]
         public ActionResult Profile(Customer customer)
         {
             var role = _roleService.GetbyRoleName("Kullanıcı");
             var kullanici = _customerService.GetByIdUser(customer.CustomerID);
-            customer.RoleId = role.Id;
+            customer.RoleId = (int)Session["id"];
             _customerService.Update(customer);
             return RedirectToAction("Index");
         }

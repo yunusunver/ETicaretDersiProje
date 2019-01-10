@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
+using ETicaretDersiProje.Eticaret.MvcWebUI.Filters;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 {
@@ -16,7 +17,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         {
             _productService = productService;
         }
-
+        [Auth]
         // GET: Cart
         public ActionResult Index()
         {
@@ -30,7 +31,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             
             return View();
         }
-
+        [Auth]
         public ActionResult AddCart(int id)
         {
             var product=_productService.GetbyId(id);
@@ -59,7 +60,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 
             return RedirectToAction("Index");
         }
-
+        
         public ActionResult Remove(int id)
         {
             var product = _productService.GetbyId(id);
@@ -84,7 +85,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             Session["sepet"] = cart;
             return RedirectToAction("Index");
         }
-
+       
         private int isExist(int id)
         {
             List<Cart> cart = (List<Cart>) Session["sepet"];

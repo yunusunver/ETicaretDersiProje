@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ETicaretDersiProje.Eticaret.Business.Abstract;
 using ETicaretDersiProje.Eticaret.Entities.Concrete;
+using ETicaretDersiProje.Eticaret.MvcWebUI.Filters;
 using ETicaretDersiProje.Eticaret.MvcWebUI.Models;
 
 namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
@@ -21,7 +22,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             _customerService = customerService;
             _orderDetailService = orderDetailService;
         }
-
+        [Auth]
         // GET: Checkout
         public ActionResult Index()
         {
@@ -57,6 +58,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 
                     _orderDetailService.Add(new OrderDetail
                     {
+                        SupplierID = item.Product.SupplierID,
                         FulFilled = false,
                         Total = item.Total,
                         Quantity = item.Quantity,
@@ -75,7 +77,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             }
            
         }
-
+        [Auth]
         public ActionResult SuccessPay()
         {
             int customerId = (int)Session["id"];

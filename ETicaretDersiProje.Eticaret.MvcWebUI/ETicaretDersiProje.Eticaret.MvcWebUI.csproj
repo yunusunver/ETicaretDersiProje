@@ -176,6 +176,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\FirmaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Controllers\ShipperController.cs" />
     <Compile Include="Controllers\SizeController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Filters\Auth.cs" />
     <Compile Include="Filters\AuthFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,6 +261,11 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Checkout\SuccessPay.cshtml" />
+    <Content Include="Views\_LayoutPageFirma.cshtml" />
+    <Content Include="Views\Firma\Index.cshtml" />
+    <Content Include="Views\Firma\Create.cshtml" />
+    <Content Include="Views\Firma\Edit.cshtml" />
+    <Content Include="Views\Firma\ListOrdered.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

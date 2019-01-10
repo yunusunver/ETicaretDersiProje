@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ETicaretDersiProje.Eticaret.Entities.Concrete.OrderDetail>
+@{
+    Layout = "../_LayoutPageFirma.cshtml";
+}
+
+<h2>Siparişler</h2>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Ürün İsmi</th>
+        <th>Adet</th>
+        <th>Toplam Fiyat</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Adres</th>
+        <th>İşlemler</th>
+            
+            
+    
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.OrderDetailID</td>
+            <td>@item.Product.ProductName</td>
+            <td>@item.Quantity</td>
+            <td>@item.Total</td>
+            <td>@item.Ordered.Email</td>
+            <td>@item.Ordered.Phone</td>
+            <td>@item.Ordered.Address</td>
+              
+            <td>
+                
+                 
+                @Html.ActionLink("İptal Et", "OrderDetailDelete", new { id = item.OrderDetailID })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

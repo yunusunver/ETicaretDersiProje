@@ -1,0 +1,44 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.ProductListViewModel
+@{
+    Layout = "../_LayoutPageFirma.cshtml";
+}
+
+<h2>Ürünler</h2>
+
+<p>
+    @Html.ActionLink("Ürün Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori İsmi</th>
+            <th>Ürün İsmi</th>
+            <th>Açıklama</th>
+            <th>Fiyat</th>
+            
+            
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@item.SupplierID</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductDescription</td>
+                <td>@item.UnitPrice</td>
+              
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.ProductID }) |
+                 
+                    @Html.ActionLink("Sil", "Delete", new { id = item.ProductID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

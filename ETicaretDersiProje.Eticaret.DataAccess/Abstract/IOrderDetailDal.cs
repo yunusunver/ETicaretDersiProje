@@ -10,5 +10,6 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Abstract
 {
     public interface IOrderDetailDal:IEntityRepository<OrderDetail>
     {
+        List<OrderDetail> GetAllOrderDetail();
     }
 }

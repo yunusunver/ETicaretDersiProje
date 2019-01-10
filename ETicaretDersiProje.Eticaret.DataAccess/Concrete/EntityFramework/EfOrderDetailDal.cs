@@ -11,5 +11,12 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
 {
     public class EfOrderDetailDal:EfEntityRepositoryBase<OrderDetail,EticaretContext>,IOrderDetailDal
     {
+        public List<OrderDetail> GetAllOrderDetail()
+        {
+            using (var context = new EticaretContext())
+            {
+                return context.OrderDetails.Include("Supplier").Include("Product").Include("Ordered").ToList();
+            }
+        }
     }
 }
