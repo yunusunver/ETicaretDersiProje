@@ -37,6 +37,7 @@
             <div class="product-information">
                 <!--/product-information-->
                 <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                <span><span>% @Model.Product.Discount İNDİRİM</span></span>
                 <h2>@Model.Product.ProductName</h2>
                 <p><b>Firma : </b>@Model.Product.Supplier.CompanyName </p>
                 <img src="images/product-details/rating.png" alt="" />
@@ -45,7 +46,8 @@
                     @if (@Session["email"] == null)
                     {
                         <p><b>Sepete ürün eklemek için giriş yapmalısınız!</b> </p>
-                        <span>@Model.Product.UnitPrice TL</span>
+                        <h3><strike>@Model.Product.UnitPrice TL</strike></h3>
+                        <span>@(Model.Product.UnitPrice - (Model.Product.UnitPrice * Model.Product.Discount / 100)) TL</span>
                         <a href="/Home/Login" style="cursor: text !important;">
                             <button type="button" class="btn btn-fefault cart">
                                 <i class="fa fa-shopping-cart"></i>

@@ -89,6 +89,18 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Discount()
+        {
+            var products = _productService.GetAll().Where(x => x.DiscountAvailable == true).ToList();
+            HomeListViewModel model = new HomeListViewModel()
+            {
+                Products = products,
+                Categories = _categoryService.GetAll(),
+                Suppliers = _supplierService.GetAll()
+            };
+            return View(model);
+        }
+
         public ActionResult Login()
         {
             return View();

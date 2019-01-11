@@ -30,6 +30,7 @@
                     </ul>
                 </div>
             </div><!--/brands_products-->
+         
 
             <div class="price-range">
                 <!--price-range-->
@@ -54,26 +55,55 @@
             
             @foreach (var item in Model.Products)
             {
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="@item.Picture" alt=""  style="width: 255px; height: 217px;"/>
-                                <h2>@item.UnitPrice TL</h2>
-                                <p>@item.ProductName</p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
-                            </div>
-                            <div class="product-overlay">
-                                <div class="overlay-content">
-                                    <h2>@item.UnitPrice TL</h2>
-                                    <p><a href="/Home/Detail/@item.ProductID">@item.ProductName</a></p>
-                                    <a href="/Home/Detail/@item.ProductID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Görüntüle</a>
-                                </div>
-                            </div>
-                        </div>
+                if (item.DiscountAvailable==true)
+                 {
+                     <div class="col-sm-4">
+                         <div class="product-image-wrapper">
+                             <div class="single-products">
+                                 <div class="productinfo text-center">
+                                     <img src="@item.Picture" alt="" style="width: 255px; height: 217px;" />
+                                     <h2>@(item.UnitPrice - (item.UnitPrice * item.Discount / 100))  TL</h2>
+                                     <p>@item.ProductName</p>
+                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
+                                 </div>
+                                 <div class="product-overlay">
+                                     <div class="overlay-content">
+                                         <h2><strike>@item.UnitPrice</strike> TL</h2>
+                                         <h3>% @item.Discount İNDİRİM</h3>
+                                         <h1>@(item.UnitPrice-(item.UnitPrice*item.Discount/100)) TL</h1>
+                                         <p><a href="/Home/Detail/@item.ProductID">@item.ProductName</a></p>
+                                         <a href="/Home/Detail/@item.ProductID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Görüntüle</a>
+                                     </div>
+                                 </div>
+                             </div>
+
+                         </div>
+                     </div>
+                 }
+                 else
+                 {
+                     <div class="col-sm-4">
+                         <div class="product-image-wrapper">
+                             <div class="single-products">
+                                 <div class="productinfo text-center">
+                                     <img src="@item.Picture" alt=""  style="width: 255px; height: 217px;"/>
+                                     <h2>@item.UnitPrice TL</h2>
+                                     <p>@item.ProductName</p>
+                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
+                                 </div>
+                                 <div class="product-overlay">
+                                     <div class="overlay-content">
+                                         <h2>@item.UnitPrice TL</h2>
+                                         <p><a href="/Home/Detail/@item.ProductID">@item.ProductName</a></p>
+                                         <a href="/Home/Detail/@item.ProductID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Görüntüle</a>
+                                     </div>
+                                 </div>
+                             </div>
                    
-                    </div>
-                </div>
+                         </div>
+                     </div>
+                 }
+            
             }
 
 

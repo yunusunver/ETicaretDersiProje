@@ -1,0 +1,94 @@
+﻿@using System.Collections
+@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.HomeListViewModel
+@{
+    Layout = "../_LayoutPageHome.cshtml";
+}
+<div class="col-sm-3">
+    <div class="left-sidebar">
+        <h2>Kategori</h2>
+        <div class="panel-group category-products" id="accordian">
+            <!--category-productsr-->
+            @foreach (var item in Model.Categories)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="/Home/Index?id=@item.CategoryID">@item.CategoryName</a></h4>
+                    </div>
+                </div>
+            }
+        </div><!--/category-products-->
+
+        <div class="brands_products">
+            <!--brands_products-->
+            <h2>Markalar</h2>
+            <div class="brands-name">
+                <ul class="nav nav-pills nav-stacked">
+                    @foreach (var item in Model.Suppliers)
+                    {
+                        <li><a href="/Home/Index?supplierID=@item.SupplierID"> <span class="pull-right">(@Model.Products.Where(x => x.SupplierID == item.SupplierID).ToList().Count)</span>@item.CompanyName</a></li>
+                    }
+
+                </ul>
+            </div>
+        </div><!--/brands_products-->
+
+
+        <div class="price-range">
+            <!--price-range-->
+            <h2>Fiyat Aralığı</h2>
+            <div class="well text-center">
+                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+            </div>
+        </div><!--/price-range-->
+        <div class="shipping text-center">
+            <!--shipping-->
+            <img src="/Content/Home/images/shipping.jpg" alt="" />
+        </div><!--/shipping-->
+
+
+    </div>
+</div>
+
+<div class="col-sm-9 padding-right">
+    <div class="features_items">
+        <!--features_items-->
+        <h2 class="title text-center">Ürünler</h2>
+
+        @foreach (var item in Model.Products)
+        {
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="@item.Picture" alt="" style="width: 255px; height: 217px;" />
+                            <h2>@(item.UnitPrice - (item.UnitPrice * item.Discount / 100))  TL</h2>
+                            <p>@item.ProductName</p>
+                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2><strike>@item.UnitPrice</strike> TL</h2>
+                                <h3>% @item.Discount İNDİRİM</h3>
+                                <h1>@(item.UnitPrice-(item.UnitPrice*item.Discount/100)) TL</h1>
+                                <p><a href="/Home/Detail/@item.ProductID">@item.ProductName</a></p>
+                                <a href="/Home/Detail/@item.ProductID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Görüntüle</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+
+
+
+
+    </div><!--features_items-->
+
+
+
+
+
+</div>

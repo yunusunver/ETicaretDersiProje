@@ -37,25 +37,54 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             var product=_productService.GetbyId(id);
             if (Session["sepet"]==null)
             {
-                List<Cart> cart=new List<Cart>();
-                cart.Add(new Cart{Product = product,Quantity = 1,Total =product.UnitPrice });
-                Session["sepet"] = cart;
-            }
-            else
-            {
-                List<Cart> cart = (List<Cart>) Session["sepet"];
-                int index = isExist(id);
-                if (index!=-1)
+                if (product.DiscountAvailable==true)
                 {
-                    cart[index].Quantity++;
-                    cart[index].Total = product.UnitPrice * cart[index].Quantity;
+                    List<Cart> cart = new List<Cart>();
+                    cart.Add(new Cart { Product = product, Quantity = 1, Total = product.UnitPrice - (product.UnitPrice * product.Discount / 100) });
+                    Session["sepet"] = cart;
                 }
                 else
                 {
-                    cart.Add(new Cart{Product = product,Quantity = 1,Total = product.UnitPrice});
+                    List<Cart> cart = new List<Cart>();
+                    cart.Add(new Cart { Product = product, Quantity = 1, Total = product.UnitPrice });
+                    Session["sepet"] = cart;
                 }
+              
+            }
+            else
+            {
+                if (product.DiscountAvailable==false)
+                {
+                    List<Cart> cart = (List<Cart>) Session["sepet"];
+                    int index = isExist(id);
+                    if (index!=-1)
+                    {
+                        cart[index].Quantity++;
+                        cart[index].Total = product.UnitPrice * cart[index].Quantity;
+                    }
+                    else
+                    {
+                        cart.Add(new Cart{Product = product,Quantity = 1,Total = product.UnitPrice  });
+                    }
 
-                Session["sepet"] = cart;
+                    Session["sepet"] = cart;
+                }
+                else
+                {
+                    List<Cart> cart = (List<Cart>)Session["sepet"];
+                    int index = isExist(id);
+                    if (index != -1)
+                    {
+                        cart[index].Quantity++;
+                        cart[index].Total = (product.UnitPrice - (product.UnitPrice * product.Discount / 100)) * cart[index].Quantity;
+                    }
+                    else
+                    {
+                        cart.Add(new Cart { Product = product, Quantity = 1, Total = product.UnitPrice - (product.UnitPrice * product.Discount / 100) });
+                    }
+
+                    Session["sepet"] = cart;
+                }
             }
 
             return RedirectToAction("Index");
@@ -74,8 +103,17 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
                 {
                     cart.RemoveAt(index);
                 }
-                cart[index].Total = (product.UnitPrice * cart[index].Quantity) - product.UnitPrice;
-                cart[index].Quantity--;
+
+                if (product.DiscountAvailable==false)
+                {
+                    cart[index].Total = (product.UnitPrice * cart[index].Quantity) - product.UnitPrice;
+                    cart[index].Quantity--;
+                }
+                else
+                {
+                    cart[index].Total = ((product.UnitPrice - (product.UnitPrice * product.Discount / 100)) * cart[index].Quantity) - (product.UnitPrice - (product.UnitPrice * product.Discount / 100));
+                    cart[index].Quantity--;
+                }
                 
             }
             else

@@ -269,6 +269,7 @@
     <Content Include="Views\Firma\Edit.cshtml" />
     <Content Include="Views\Firma\ListOrdered.cshtml" />
     <Content Include="Views\Home\Orders.cshtml" />
+    <Content Include="Views\Home\Discount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

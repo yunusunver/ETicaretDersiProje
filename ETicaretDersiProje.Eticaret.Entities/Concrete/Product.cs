@@ -22,7 +22,7 @@ namespace ETicaretDersiProje.Eticaret.Entities.Concrete
         public int SizeID { get; set; }
         [ForeignKey("Color")]
         public int ColorID { get; set; }
-        public int? Discount  { get; set; }
+        public int Discount  { get; set; }
         public string Picture { get; set; }
         public bool? DiscountAvailable  { get; set; }
         public bool? CurrentOrder { get; set; }
