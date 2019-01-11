@@ -27,6 +27,7 @@ namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Ordered> Ordereds { get; set; }
+        public DbSet<Complaint> Complaints { get; set; }
 
     }
 }

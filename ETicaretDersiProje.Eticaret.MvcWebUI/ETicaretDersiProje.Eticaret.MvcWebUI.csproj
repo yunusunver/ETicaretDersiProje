@@ -176,6 +176,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
+    <Compile Include="Controllers\ComplaintController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\FirmaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Models\CartListViewModel.cs" />
     <Compile Include="Models\CategoryListViewModel.cs" />
     <Compile Include="Models\ColorListViewModel.cs" />
+    <Compile Include="Models\ComplaintListViewModel.cs" />
     <Compile Include="Models\CustomerListViewModel.cs" />
     <Compile Include="Models\HomeListViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -270,6 +272,8 @@
     <Content Include="Views\Firma\ListOrdered.cshtml" />
     <Content Include="Views\Home\Orders.cshtml" />
     <Content Include="Views\Home\Discount.cshtml" />
+    <Content Include="Views\Home\Complaints.cshtml" />
+    <Content Include="Views\Complaint\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

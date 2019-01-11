@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ETicaretDersiProje.Core.DataAccess.EntityFramework;
+using ETicaretDersiProje.Eticaret.DataAccess.Abstract;
+using ETicaretDersiProje.Eticaret.Entities.Concrete;
+
+namespace ETicaretDersiProje.Eticaret.DataAccess.Concrete.EntityFramework
+{
+    public class EfComplaintDal : EfEntityRepositoryBase<Complaint, EticaretContext>, IComplaintDal
+    {
+
+        public List<Complaint> GetAllComplaints()
+        {
+            using (var context = new EticaretContext())
+            {
+                return context.Complaints.Include("Customer").ToList();
+            }
+        }
+    }
+}

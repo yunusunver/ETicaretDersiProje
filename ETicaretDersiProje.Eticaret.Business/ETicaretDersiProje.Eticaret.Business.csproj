@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IColorService.cs" />
+    <Compile Include="Abstract\IComplaintService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IOrderDetailService.cs" />
     <Compile Include="Abstract\IOrderedService.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Concrete\Managers\CategoryManager.cs" />
     <Compile Include="Concrete\Managers\ColorManager.cs" />
     <Compile Include="Concrete\Managers\CustomerManager.cs" />
+    <Compile Include="Concrete\Managers\ComplaintManager.cs" />
     <Compile Include="Concrete\Managers\OrderDetailManager.cs" />
     <Compile Include="Concrete\Managers\OrderedManager.cs" />
     <Compile Include="Concrete\Managers\OrderManager.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\FluentValidation\CategoryValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\ColorValidatior.cs" />
+    <Compile Include="ValidationRules\FluentValidation\ComplaintValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\CustomerValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\OrderedValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\ProductValidatior.cs" />

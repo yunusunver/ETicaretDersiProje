@@ -24,8 +24,9 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
         private IRoleService _roleService;
         private ISupplierService _supplierService;
         private IOrderedService _orderedService;
+        private IComplaintService _complaintService;
 
-        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService,ISupplierService supplierService, IOrderedService orderedService)
+        public HomeController(ICategoryService categoryService, IProductService productService,ICustomerService customerService,IRoleService roleService,ISupplierService supplierService, IOrderedService orderedService,IComplaintService complaintService)
         {
             _roleService = roleService;
             _categoryService = categoryService;
@@ -33,6 +34,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             _customerService = customerService;
             _supplierService = supplierService;
             _orderedService = orderedService;
+            _complaintService = complaintService;
         }
 
         public ActionResult Index(int id=0 , int supplierID=0)
@@ -103,6 +105,7 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
 
         public ActionResult Login()
         {
+         
             return View();
         }
 
@@ -149,7 +152,24 @@ namespace ETicaretDersiProje.Eticaret.MvcWebUI.Controllers
             Session.Clear();
             return RedirectToAction("Index","Home");
         }
-
+        [Auth]
+        public ActionResult Complaints()
+        {
+            HomeListViewModel model = new HomeListViewModel()
+            {
+                Complaint = new Complaint()
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Complaints(Complaint complaint)
+        {
+            complaint.CustomerID = (int)Session["id"];
+            complaint.CreatedDate=DateTime.Now;
+            _complaintService.Add(complaint);
+            return RedirectToAction("Index");
+        }
+        [Auth]
         public ActionResult Orders(int id)
         {
             OrderedListViewModel model=new OrderedListViewModel()

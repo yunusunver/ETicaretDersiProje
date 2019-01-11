@@ -1,0 +1,32 @@
+﻿@model ETicaretDersiProje.Eticaret.MvcWebUI.Models.HomeListViewModel
+@{
+    Layout = "../_LayoutPageHome.cshtml";
+}
+
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+        
+         
+            <div class="col-sm-9">
+                <div class="signup-form">
+                    <!--sign up form-->
+                    <h2>Şikayet Et!</h2>
+                    @using (Html.BeginForm(Html.BeginForm("Complaints", "Home")))
+                    {
+                        @Html.EditorFor(model => model.Complaint.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = "Başlık" } })
+                        @Html.ValidationMessageFor(model => model.Complaint.Title, "", new { @class = "text-danger" })
+
+                        @Html.TextAreaFor(model => model.Complaint.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "Şikayetiniz." } })
+                        @Html.ValidationMessageFor(model => model.Complaint.Description, "", new { @class = "text-danger" })
+
+                 
+                        <button type="submit" class="btn btn-default">Şikayet et</button>
+
+                    }
+                </div><!--/sign up form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

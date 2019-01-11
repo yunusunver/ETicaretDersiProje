@@ -31,6 +31,7 @@ namespace ETicaretDersiProje.Eticaret.Business.DependencyResolvers.Ninject
             Bind<IPaymentService>().To<PaymentManager>().InSingletonScope();
             Bind<ICustomerService>().To<CustomerManager>().InSingletonScope();
             Bind<IOrderedService>().To<OrderedManager>().InSingletonScope();
+            Bind<IComplaintService>().To<ComplaintManager>().InSingletonScope();
 
             Bind<ICategoryDal>().To<EfCategoryDal>();
             Bind<IProductDal>().To<EfProductDal>();
@@ -44,6 +45,7 @@ namespace ETicaretDersiProje.Eticaret.Business.DependencyResolvers.Ninject
             Bind<IPaymentDal>().To<EfPaymentDal>();
             Bind<ICustomerDal>().To<EfCustomerDal>();
             Bind<IOrderedDal>().To<EfOrderedDal>();
+            Bind<IComplaintDal>().To<EfComplaintDal>();
 
             Bind<DbContext>().To<EticaretContext>();
             

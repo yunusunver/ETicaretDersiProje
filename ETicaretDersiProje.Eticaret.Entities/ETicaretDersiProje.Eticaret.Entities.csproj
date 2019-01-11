@@ -45,6 +45,7 @@
     <Compile Include="Concrete\Cart.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Color.cs" />
+    <Compile Include="Concrete\Complaint.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Order.cs" />
     <Compile Include="Concrete\OrderDetail.cs" />

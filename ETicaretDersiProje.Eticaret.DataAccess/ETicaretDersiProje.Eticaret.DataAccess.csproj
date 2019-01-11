@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IColorDal.cs" />
+    <Compile Include="Abstract\IComplaintDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IOrderDal.cs" />
     <Compile Include="Abstract\IOrderDetailDal.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Abstract\ISupplierDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfColorDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfComplaintDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfOrderDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfOrderDetailDal.cs" />
